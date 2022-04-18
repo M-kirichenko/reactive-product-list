@@ -1,0 +1,42 @@
+#panel {
+  height: 10%;
+  background-color: white;
+  box-shadow: 0 5px 5px #888888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#panel-items {
+  width: 40%;
+  height: 35%;
+}
+
+.panel-el {
+  background-color: #c5c5c5;
+  border-radius: 2.5px;
+  margin: 0 2%;
+  height: 100%;
+}
+button.panel-el {
+  border: none;
+}
+input.panel-el {
+  width: 33%;
+  height: 100%;
+  border: none;
+  padding: 2%;
+  outline: none;
+}
+
+button.panel-el {
+  width: 15%;
+  height: 100%;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#panel strong {
+  margin-left: 1%;
+}

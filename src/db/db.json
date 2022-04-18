@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Light-brown chair",
+    "price": 15,
+    "amount": 15,
+    "img": "https://m.media-amazon.com/images/I/41tCIsGV8UL.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Skin-tone Sofa",
+    "price": 80,
+    "amount": 10,
+    "img": "https://www.ikea.com/ph/en/images/products/vretstorp-sleeper-sofa-hallarp-beige__0818764_pe774597_s5.jpg?f=s"
+  },
+  {
+    "id": 3,
+    "name": "Brown table",
+    "price": 30,
+    "img": "https://www.ikea.com/ph/en/images/products/moerbylanga-table-oak-veneer-brown-stained__0737108_pe740890_s5.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Children's blue table",
+    "price": 27,
+    "amount": 5,
+    "img": "https://www.ikea.com/us/en/images/products/mammut-childrens-table-indoor-outdoor-blue__0735844_pe740211_s5.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Сupboard",
+    "price": 45,
+    "amount": 10,
+    "img": "https://cdn.images.fecom-media.com/FE00018317/images/HE1849041_1431004-GLS-CLF-P01.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Sponge-Bob armchair",
+    "price": 45,
+    "amount": 15,
+    "img": "https://target.scene7.com/is/image/Target/GUEST_de8bdd84-76da-442e-8d80-40f0e86eaefd"
+  },
+  {
+    "id": 7,
+    "name": "Dark-brown table",
+    "price": 35,
+    "amount": 20,
+    "img": "https://www.godrejinterio.com/imagestore/B2C/56101543SD00017/56101543SD00017_01_1500x1500.png"
+  },
+  {
+    "id": 8,
+    "name": "Dark-brown chair",
+    "price": 17,
+    "amount": 25,
+    "img": "https://www.ikea.com/us/en/images/products/ingolf-chair-brown-black__0728153_pe736122_s5.jpg?f=s"
+  }
+]

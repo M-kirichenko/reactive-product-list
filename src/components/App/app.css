@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#root {
+  background-color: #ccecd1;
+  height: 100vh;
+  padding-bottom: 5%;
+}
+
+#root * {
+  box-sizing: border-box;
+  font-size: 1vw;
+}
