@@ -19,9 +19,10 @@ class Panel extends Component {
             type="text"
             className="panel-el"
             placeholder="Product name"
-            onInput={({ target }) =>
-              this.setState((state) => (state.input = target.value))
-            }
+            onInput={({ target }) => {
+              if (target.value.length === 0) this.search("");
+              else this.setState((state) => (state.input = target.value));
+            }}
           />
           <button
             type="button"

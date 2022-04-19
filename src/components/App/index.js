@@ -18,7 +18,8 @@ class App extends Component {
   search = (name) => {
     const filtered = this.state.products.filter((product) => {
       const productName = product.name.toLowerCase();
-      return productName.includes(name);
+      const inputName = name.toLowerCase();
+      return productName.includes(inputName);
     });
     this.setState((state) => (state.filtered = filtered));
   };
