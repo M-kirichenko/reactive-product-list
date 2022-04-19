@@ -7,7 +7,7 @@ class Panel extends Component {
   };
 
   render() {
-    const { onSearch: search } = this.props;
+    const { onSearch } = this.props;
     return (
       <div id="panel">
         <div id="panel-items">
@@ -15,17 +15,14 @@ class Panel extends Component {
             type="text"
             className="panel-el"
             placeholder="Product name"
-            onInput={({ target }) => {
-              if (!target.value.trim()) {
-                search("");
-                this.setState((state) => (state.input = ""));
-              } else this.setState((state) => (state.input = target.value));
-            }}
+            onInput={({ target }) =>
+              this.setState((state) => (state.input = target.value))
+            }
           />
           <button
             type="button"
             className="panel-el"
-            onClick={() => search(this.state.input)}
+            onClick={() => onSearch(this.state.input)}
           >
             Search
           </button>

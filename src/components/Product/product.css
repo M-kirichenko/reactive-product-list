@@ -5,6 +5,7 @@
   margin: 1% 1.5%;
   padding: 1%;
   cursor: pointer;
+  transition: 1s;
 }
 
 .product-image {
@@ -46,6 +47,6 @@
   cursor: pointer;
 }
 
-.product-item:hover {
+.selected-item {
   background-color: #5df143;
 }
