@@ -1,17 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 import "./panel.css";
 
-const panel = () => {
-  return (
-    <div id="panel">
-      <div id="panel-items">
-        <input type="text" className="panel-el" placeholder="Product name" />
-        <button type="button" className="panel-el">
-          Search
-        </button>
-        <strong>Total value of selected items: 0&nbsp;$</strong>
+class Panel extends Component {
+  render() {
+    return (
+      <div id="panel">
+        <div id="panel-items">
+          <input type="text" className="panel-el" placeholder="Product name" />
+          <button type="button" className="panel-el">
+            Search
+          </button>
+          <strong>Total value of selected items: 0&nbsp;$</strong>
+        </div>
       </div>
-    </div>
-  );
-};
-export default panel;
+    );
+  }
+}
+export default Panel;
