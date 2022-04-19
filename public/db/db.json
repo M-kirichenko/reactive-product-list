@@ -17,6 +17,7 @@
     "id": 3,
     "name": "Brown table",
     "price": 30,
+    "amount": 10,
     "img": "https://www.ikea.com/ph/en/images/products/moerbylanga-table-oak-veneer-brown-stained__0737108_pe740890_s5.jpg"
   },
   {

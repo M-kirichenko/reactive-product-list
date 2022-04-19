@@ -2,10 +2,14 @@ import React from "react";
 import Product from "../Product";
 import "./productList.css";
 
-const productList = () => {
+const productList = ({ products }) => {
   return (
     <div id="products-wrapper">
-      <Product />
+      {products.length
+        ? products.map((product) => (
+            <Product key={product.id} product={product} />
+          ))
+        : "no data..."}
     </div>
   );
 };
