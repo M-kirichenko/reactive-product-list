@@ -4,22 +4,20 @@ import Panel from "../Panel";
 import ProductList from "../ProductList";
 import "./app.css";
 
-const productsAmount = localStorage.getItem("products")
-  ? JSON.parse(localStorage.getItem("products"))
-  : {};
-
 class App extends Component {
+  cartAssoc = JSON.parse(localStorage.getItem("products")) || {};
+
   state = {
     products: [],
     filtered: null,
-    cart: {},
+    cart: null,
   };
 
   async componentDidMount() {
-    const { data: products } = await axios.get("./db/db.json");
+    const { data } = await axios.get("./db/db.json");
     this.setState((state) => {
-      state.products = products;
-      state.cart = productsAmount;
+      state.products = data;
+      state.cart = this.cartAssoc;
       return state;
     });
   }
@@ -34,15 +32,13 @@ class App extends Component {
   };
 
   addProduct = (id) => {
-    if (productsAmount[id]) {
-      delete productsAmount[id];
+    if (this.cartAssoc[id]) {
+      delete this.cartAssoc[id];
     } else {
-      productsAmount[id] = 1;
+      this.cartAssoc[id] = 1;
     }
-    localStorage.setItem("products", JSON.stringify(productsAmount));
-    this.setState(
-      (state) => (state.cart = JSON.parse(localStorage.getItem("products")))
-    );
+    localStorage.setItem("products", JSON.stringify(this.cartAssoc));
+    this.setState((state) => (state.cart = this.cartAssoc));
   };
 
   countSum = () => {
