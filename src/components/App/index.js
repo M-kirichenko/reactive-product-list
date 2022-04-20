@@ -54,14 +54,13 @@ class App extends Component {
   };
 
   render() {
+    const { filtered, products } = this.state;
     const totalPrice = this.countSum();
     return (
       <>
         <Panel onSearch={this.search} total={totalPrice} />
         <ProductList
-          products={
-            this.state.filtered ? this.state.filtered : this.state.products
-          }
+          products={filtered || products}
           cart={this.state.cart}
           onProductAdd={this.addProduct}
         />

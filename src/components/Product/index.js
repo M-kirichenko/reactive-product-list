@@ -4,11 +4,8 @@ import "./product.css";
 const product = ({ product, onProductAdd, selected, amountSelected }) => {
   const { id, name, amount, price, img } = product;
   return (
-    <div
-      className={` product-item ${selected && "selected-item"}`}
-      onClick={() => onProductAdd(id)}
-    >
-      <div className="product-image">
+    <div className={` product-item ${selected && "selected-item"}`}>
+      <div className="product-image" onClick={() => onProductAdd(id)}>
         <img src={img} alt="product-1" className="img-responsive" />
       </div>
       <h4>{name}</h4>
