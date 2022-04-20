@@ -2,12 +2,18 @@ import React from "react";
 import Product from "../Product";
 import "./productList.css";
 
-const productList = ({ products }) => {
+const productList = ({ products, onProductAdd, cart }) => {
   return (
     <div id="products-wrapper">
       {products.length
         ? products.map((product) => (
-            <Product key={product.id} product={product} />
+            <Product
+              selected={cart[product.id]}
+              amountSelected={cart[product.id] ? cart[product.id] : 0}
+              key={`product-${product.id}`}
+              product={product}
+              onProductAdd={onProductAdd}
+            />
           ))
         : "no data..."}
     </div>
