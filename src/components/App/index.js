@@ -25,14 +25,11 @@ class App extends Component {
   };
 
   render() {
+    const { products, filtered } = this.state;
     return (
       <>
         <Panel onSearch={this.search} />
-        <ProductList
-          products={
-            this.state.filtered ? this.state.filtered : this.state.products
-          }
-        />
+        <ProductList products={filtered || products} />
       </>
     );
   }
