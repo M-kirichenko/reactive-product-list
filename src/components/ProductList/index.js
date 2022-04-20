@@ -8,8 +8,10 @@ const productList = ({ products, onProductAdd, cart }) => {
       {products.length
         ? products.map((product) => (
             <Product
-              selected={cart[product.id]}
-              amountSelected={cart[product.id] ? cart[product.id] : 0}
+              selected={cart.hasOwnProperty(product.id)}
+              amountSelected={
+                cart.hasOwnProperty(product.id) ? cart[product.id] : 0
+              }
               key={`product-${product.id}`}
               product={product}
               onProductAdd={onProductAdd}
