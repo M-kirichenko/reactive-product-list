@@ -42,7 +42,7 @@ class App extends Component {
   };
 
   controlAmount = (id, action) => {
-    if (action === "inc") this.cartAssoc[id]++;
+    if (action === "incr") this.cartAssoc[id]++;
     else if (action === "decr") {
       this.cartAssoc[id]--;
       if (this.cartAssoc[id] === 0) delete this.cartAssoc[id];

@@ -22,16 +22,16 @@ const product = ({
           className="add-rem-button"
           onClick={() => selected && controlAmount(id, "decr")}
         >
-          -
+          <img src="./minus.svg" alt="minus" />
         </span>
         <span>{amountSelected}</span>
         <span
           className="add-rem-button"
           onClick={() =>
-            selected && amountSelected < amount && controlAmount(id, "inc")
+            selected && amountSelected < amount && controlAmount(id, "incr")
           }
         >
-          +
+          <img src="./plus.svg" alt="plus" />
         </span>
       </div>
     </div>
