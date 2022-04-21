@@ -5,14 +5,21 @@ import ProductList from "../ProductList";
 import "./app.css";
 
 class App extends Component {
+  cartAssoc = JSON.parse(localStorage.getItem("products")) || {};
+
   state = {
     products: [],
     filtered: null,
+    cart: null,
   };
 
   async componentDidMount() {
-    const { data: products } = await axios.get("./db/db.json");
-    this.setState((state) => (state.products = products));
+    const { data } = await axios.get("./db/db.json");
+    this.setState((state) => {
+      state.products = data;
+      state.cart = this.cartAssoc;
+      return state;
+    });
   }
 
   search = (name) => {
@@ -24,12 +31,39 @@ class App extends Component {
     this.setState((state) => (state.filtered = filtered));
   };
 
+  addProduct = (id) => {
+    if (this.cartAssoc[id]) {
+      delete this.cartAssoc[id];
+    } else {
+      this.cartAssoc[id] = 1;
+    }
+    localStorage.setItem("products", JSON.stringify(this.cartAssoc));
+    this.setState((state) => (state.cart = this.cartAssoc));
+  };
+
+  countSum = () => {
+    let sum = 0;
+    for (let key in this.state.cart) {
+      const prodInd = this.state.products.findIndex(
+        // eslint-disable-next-line eqeqeq
+        (product) => product.id == key
+      );
+      sum += this.state.products[prodInd].price * this.state.cart[key];
+    }
+    return sum;
+  };
+
   render() {
-    const { products, filtered } = this.state;
+    const { filtered, products } = this.state;
+    const totalPrice = this.countSum();
     return (
       <>
-        <Panel onSearch={this.search} />
-        <ProductList products={filtered || products} />
+        <Panel onSearch={this.search} total={totalPrice} />
+        <ProductList
+          products={filtered || products}
+          cart={this.state.cart}
+          onProductAdd={this.addProduct}
+        />
       </>
     );
   }

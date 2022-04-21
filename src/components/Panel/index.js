@@ -7,7 +7,7 @@ class Panel extends Component {
   };
 
   render() {
-    const { onSearch } = this.props;
+    const { onSearch, total } = this.props;
     return (
       <div id="panel">
         <div id="panel-items">
@@ -26,7 +26,7 @@ class Panel extends Component {
           >
             Search
           </button>
-          <strong>Total value of selected items: 0&nbsp;$</strong>
+          <strong>Total value of selected items: {total} &nbsp;$ </strong>
         </div>
       </div>
     );
