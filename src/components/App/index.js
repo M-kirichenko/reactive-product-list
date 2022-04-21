@@ -41,6 +41,16 @@ class App extends Component {
     this.setState((state) => (state.cart = this.cartAssoc));
   };
 
+  controlAmount = (id, action) => {
+    if (action === "inc") this.cartAssoc[id]++;
+    else if (action === "decr") {
+      this.cartAssoc[id]--;
+      if (this.cartAssoc[id] === 0) delete this.cartAssoc[id];
+    }
+    localStorage.setItem("products", JSON.stringify(this.cartAssoc));
+    this.setState((state) => (state.cart = this.cartAssoc));
+  };
+
   countSum = () => {
     let sum = 0;
     for (let key in this.state.cart) {
@@ -63,6 +73,7 @@ class App extends Component {
           products={filtered || products}
           cart={this.state.cart}
           onProductAdd={this.addProduct}
+          controlAmount={this.controlAmount}
         />
       </>
     );

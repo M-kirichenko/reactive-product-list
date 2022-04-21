@@ -2,7 +2,7 @@ import React from "react";
 import Product from "../Product";
 import "./productList.css";
 
-const productList = ({ products, onProductAdd, cart }) => {
+const productList = ({ products, onProductAdd, cart, controlAmount }) => {
   return (
     <div id="products-wrapper">
       {products.length
@@ -13,6 +13,7 @@ const productList = ({ products, onProductAdd, cart }) => {
               key={`product-${product.id}`}
               product={product}
               onProductAdd={onProductAdd}
+              controlAmount={controlAmount}
             />
           ))
         : "no data..."}
